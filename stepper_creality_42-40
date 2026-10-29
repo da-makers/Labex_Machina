@@ -1,0 +1,28 @@
+// Labex machina
+
+// CNC Shield V3.0 Stepper Control Demo
+// Controller: A4988
+// Stepper Creality 42-40 12V
+
+const int StepZ = 4;
+const int DirZ = 7;
+
+
+void setup() {
+  pinMode(StepZ,OUTPUT);
+  pinMode( DirZ,OUTPUT);
+
+}
+
+void loop() {
+ digitalWrite(DirZ, HIGH); // set direction, HIGH for clockwise, LOW for anticlockwise
+
+for(int x = 0; x<20; x++) { // loop for x steps
+  digitalWrite(StepZ,HIGH);
+  delayMicroseconds(500);
+  digitalWrite(StepZ,LOW); 
+  delayMicroseconds(500);
+ }
+delay(50); // delay for single step
+
+}
